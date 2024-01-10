@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+</head>
+<body>
+    <button onclick="showLogin()">
+        Log in
+        <div class="arrow-wrapper">
+            <div class="arrow"></div>
+        </div>
+    </button>
+    <br>
+    <button onclick="showRegistration()">
+        Register
+        <div class="arrow-wrapper">
+            <div class="arrow"></div>
+        </div>
+    </button>
+
+    <script>
+        function showLogin() {
+            window.location.href = "{{ url_for('login') }}";  
+        }
+
+        function showRegistration() {
+            window.location.href = "{{ url_for('register') }}";
+        }
+    </script>
+</body>
+</html>

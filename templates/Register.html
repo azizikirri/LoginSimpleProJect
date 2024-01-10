@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='Register.css') }}">
+    <script>
+        function validateForm() {
+            var firstName = document.getElementById('first-name').value;
+            var lastName = document.getElementById('last-name').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            var acceptTerms = document.getElementById('accept-terms').checked;
+
+            if (firstName === '' || lastName === '' || email === '' || password === '' || confirmPassword === '' || !acceptTerms) {
+                alert('Please fill out all required fields and accept the Terms of Use & Privacy Policy.');
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert('Password and Confirm Password do not match.');
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="inner">
+            <form method="POST" action="/register" onsubmit="return validateForm()">
+                <h3>Registration Form</h3>
+                <div class="form-group">
+                    <div class="form-wrapper">
+                        <label for="first-name">First Name</label>
+                        <input type="text" id="first-name" name="first_name" class="form-control" required>
+                    </div>
+                    <div class="form-wrapper">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" id="last-name" name="last_name" class="form-control" required>
+                    </div>
+                </div>
+                <div class="form-wrapper">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+                <div class="form-wrapper">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" class="form-control" required>
+                </div>
+                <div class="form-wrapper">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" id="confirm-password" name="confirm_password" class="form-control" required>
+                </div>
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" id="accept-terms" required> I accept the Terms of Use & Privacy Policy.
+                        <span class="checkmark"></span>
+                    </label>
+                </div>
+                <button type="submit">Register Now</button>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

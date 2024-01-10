@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Successful</title>
+    <style>
+        body {
+            background-color: #e6f7ff; /* Light blue background color */
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #008080; /* Teal color for the heading */
+        }
+
+        p {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .emoji {
+            font-size: 36px;
+            margin-top: 20px;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50; /* Green button color */
+            color: #fff; /* White text color */
+            text-decoration: none;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registration Successful! 🎉</h1>
+    <p>Thank you for registering. Your account has been successfully created.</p>
+    <p>You can now <a href="{{ url_for('login') }}">log in</a> to your account.</p>
+    
+    <div class="emoji">👏</div>
+     <br><br>
+    <div>
+        
+    <a href="{{ url_for('index') }}" class="back-button">Back to Home</a>
+    </div>
+
+</body>
+</html>
